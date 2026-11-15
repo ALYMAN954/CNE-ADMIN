@@ -30,7 +30,7 @@
     sec = name; data = null;
     show('home', false); show('sec', true);
     $('sec-title').textContent = H[name].title;
-    $('l-admin').href = H[name].admin; $('l-form').href = H[name].form;
+    $('l-admin').href = H[name].admin; $('l-form').href = H[name].form; $('l-screen').href = H[name].screen;
     note('login-err', ''); note('data-err', '');
     $('pw').value = '';
     document.title = 'CNE ' + H[name].title + ' | Security Forces Hospital Dammam';
