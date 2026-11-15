@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0E7C86">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CNE Admin">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>CNE Admin | Security Forces Hospital Dammam</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/favicon.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal-900:#0B4F55; --teal-700:#0E7C86; --turq:#35B7BE; --turq-100:#E0F4F5;
+      --gold:#A57B20; --gold-100:#F7F0DE; --mist:#EDF6F6; --ink:#12353A; --muted:#587277; --line:#D3E3E4;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin:0; background:var(--mist); color:var(--ink); font-family:'Albert Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif; line-height:1.45; min-height:100vh; display:flex; flex-direction:column; }
+    .site-header { background:#fff; border-bottom:1px solid var(--line); border-top:5px solid; border-image:linear-gradient(90deg,#D2B56E 50%,#35B7BE 50%) 1; padding:calc(14px + env(safe-area-inset-top)) 16px 14px; }
+    .header-inner { max-width:760px; margin:0 auto; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; }
+    .header-inner img { display:block; height:56px; width:auto; max-width:100%; }
+    .brand-title { text-align:center; }
+    .brand-title h1 { margin:0; font-size:1.25rem; line-height:1.2; color:var(--gold); }
+    .brand-title .dept { margin:2px 0 0; font-weight:600; color:#178E97; font-size:.95rem; }
+    main { width:100%; max-width:760px; margin:0 auto; padding:20px 16px 28px; flex:1; }
+    h2.lead { margin:4px 0 4px; font-size:1.35rem; color:var(--teal-900); }
+    p.sub { margin:0 0 18px; color:var(--muted); }
+    .choices { display:grid; gap:14px; }
+    .choice { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; box-shadow:0 1px 2px rgba(11,79,85,.06); }
+    .choice h3 { margin:0 0 4px; font-size:1.2rem; color:var(--teal-900); }
+    .choice p { margin:0 0 14px; color:var(--muted); font-size:.95rem; }
+    .btn { display:flex; align-items:center; justify-content:center; min-height:52px; padding:12px 18px; border-radius:10px; background:var(--teal-700); color:#fff; font:inherit; font-weight:700; font-size:1.05rem; text-decoration:none; }
+    .btn:active { background:var(--teal-900); }
+    .btn.gold { background:var(--gold); }
+    .btn:focus-visible, .small:focus-visible { outline:3px solid var(--turq); outline-offset:2px; }
+    .small { display:block; margin-top:10px; text-align:center; color:var(--teal-700); font-weight:600; text-decoration:none; padding:8px; min-height:40px; }
+    .site-footer { text-align:center; color:var(--muted); font-size:.85rem; padding:12px 16px calc(18px + env(safe-area-inset-bottom)); }
+
+    .hidden { display:none !important; }
+    .btn { border:0; width:100%; cursor:pointer; }
+    .bar { display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+    .back { background:none; border:0; color:var(--teal-700); font:inherit; font-weight:700; padding:8px 4px; min-height:44px; cursor:pointer; }
+    .panel-title { margin:0; font-size:1.35rem; color:var(--teal-900); flex:1; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:14px; box-shadow:0 1px 2px rgba(11,79,85,.06); }
+    .field label { display:block; font-weight:600; margin-bottom:6px; }
+    .field input[type=password], .field input[type=search], .field select { width:100%; font:inherit; padding:11px 12px; border:1.5px solid #B9D0D2; border-radius:8px; background:#fff; color:var(--ink); min-height:46px; }
+    .err { color:#B3261E; background:#FCEDEC; border-radius:8px; padding:10px 12px; margin:10px 0 0; }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:12px 0; }
+    .stat { background:var(--turq-100); border-radius:10px; padding:8px 6px; text-align:center; font-size:.8rem; color:var(--muted); }
+    .stat b { display:block; font-size:1.4rem; color:var(--teal-900); }
+    .actions { display:grid; gap:10px; margin-top:12px; }
+    @media (min-width:560px) { .actions { grid-template-columns:1fr 1fr; } }
+    .btn.secondary { background:#fff; color:var(--teal-700); border:1.5px solid var(--teal-700); }
+    .btn[disabled] { opacity:.6; }
+    .scroll { overflow:auto; max-height:60vh; border:1px solid var(--line); border-radius:10px; margin-top:12px; -webkit-overflow-scrolling:touch; }
+    table { border-collapse:collapse; width:100%; font-size:.85rem; }
+    th, td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; max-width:260px; overflow:hidden; text-overflow:ellipsis; }
+    th { position:sticky; top:0; background:var(--teal-700); color:#fff; z-index:1; }
+    tr.inside td:first-child + td { }
+    .links { display:flex; gap:16px; flex-wrap:wrap; margin-top:4px; }
+    .links a { color:var(--teal-700); font-weight:600; padding:8px 0; }
+    .count-note { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+    main { max-width:980px; }
+    @media (min-width:640px) { .choices { grid-template-columns:1fr 1fr; } }
+    @media (max-width:420px) { .header-inner img { height:44px; } .brand-title h1 { font-size:1.05rem; } .brand-title .dept { font-size:.85rem; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div><img src="assets/ncpd-logo.png" alt="NCPD Accredited Provider with Distinction"></div>
+      <div class="brand-title">
+        <h1>CNE Admin</h1>
+        <p class="dept">Nursing Education and Staff Development</p>
+      </div>
+      <div><img src="assets/hospital-logo.png" alt="Security Forces Hospital Dammam"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home: choose a file -->
+    <div id="home">
+      <h2 class="lead">Choose a file</h2>
+      <p class="sub">Attendance and Evaluation are separate. Each asks for its own supervisor password.</p>
+      <div class="choices">
+        <section class="choice" aria-labelledby="t-att">
+          <h3 id="t-att">Attendance</h3>
+          <p>See who attended each lecture and download the attendance file.</p>
+          <button type="button" class="btn" data-sec="attendance">Open Attendance</button>
+        </section>
+        <section class="choice" aria-labelledby="t-eval">
+          <h3 id="t-eval">Evaluation</h3>
+          <p>See the evaluation answers for each lecture and download the evaluation file.</p>
+          <button type="button" class="btn gold" data-sec="evaluation">Open Evaluation</button>
+        </section>
+      </div>
+    </div>
+
+    <!-- One file -->
+    <div id="sec" class="hidden">
+      <div class="bar">
+        <button type="button" class="back" id="back">&larr; Back</button>
+        <h2 class="panel-title" id="sec-title"></h2>
+      </div>
+
+      <section class="card" id="login">
+        <div class="field">
+          <label for="pw">Supervisor password</label>
+          <input id="pw" type="password" autocomplete="current-password">
+        </div>
+        <div class="err hidden" id="login-err" role="alert"></div>
+        <div class="actions"><button type="button" class="btn" id="login-btn">Sign in</button></div>
+      </section>
+
+      <div id="data" class="hidden">
+        <section class="card">
+          <div class="field">
+            <label for="tab">Lecture</label>
+            <select id="tab"></select>
+          </div>
+          <div class="stats" id="stats"></div>
+          <div class="field">
+            <label for="filter">Search in this lecture</label>
+            <input id="filter" type="search" placeholder="Name, ID, unit…" autocomplete="off">
+          </div>
+          <p class="count-note" id="count-note"></p>
+          <div class="scroll"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+          <div class="actions">
+            <button type="button" class="btn" id="dl-one">Download this lecture (Excel)</button>
+            <button type="button" class="btn secondary" id="dl-all">Download all lectures (Excel)</button>
+            <button type="button" class="btn secondary" id="refresh">Refresh</button>
+            <button type="button" class="btn secondary" id="logout">Sign out</button>
+          </div>
+          <div class="err hidden" id="data-err" role="alert"></div>
+        </section>
+        <div class="links"><a id="l-admin" href="#">Open admin panel (settings, open/close)</a><a id="l-form" href="#">View the form</a></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Security Forces Hospital Dammam · Nursing Education and Staff Development</footer>
+  <script src="config.js"></script>
+  <script src="xlsx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
