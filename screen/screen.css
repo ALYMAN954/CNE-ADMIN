@@ -1,0 +1,29 @@
+:root { --teal:#0E7C86; --deep:#0B4F55; --gold:#9A7016; --gold-line:#C9A24A; --paper:#FBF9F4; --ink:#12353A; --purple:#5B2A86; }
+* { box-sizing:border-box; }
+html, body { margin:0; height:100%; background:var(--paper); overflow:hidden; }
+body { font-family:'Albert Sans','IBM Plex Sans Arabic','Segoe UI',Tahoma,system-ui,sans-serif; color:var(--ink); }
+.stage { position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:0 0; background:var(--paper); }
+.frames { position:absolute; inset:0; width:1920px; height:1080px; }
+.left, .right, .center { position:absolute; display:flex; flex-direction:column; align-items:center; }
+
+.left { left:80px; top:88px; width:406px; height:900px; gap:16px; }
+.hosp { width:340px; height:auto; display:block; }
+.accr { margin:0; color:var(--purple); font-weight:800; font-size:25px; line-height:1.28; text-align:left; width:100%; padding:0 6px; }
+.ncpd { width:290px; height:auto; display:block; }
+.bld { flex:1; min-height:0; width:100%; object-fit:cover; object-position:center 40%; border-radius:18px; }
+
+.center { left:540px; top:140px; width:840px; height:900px; justify-content:flex-start; }
+.scan { margin:0; font-size:52px; line-height:1.1; white-space:nowrap; font-weight:800; color:var(--deep); text-align:center; letter-spacing:-.01em; }
+.qr { margin-top:34px; width:640px; height:640px; padding:0; border-radius:34px; background:#fff; border:7px solid var(--gold-line); box-shadow:0 0 0 7px var(--teal), 0 18px 40px rgba(11,79,85,.18); overflow:hidden; }
+.qr svg { display:block; width:100%; height:100%; }
+.hint { margin:42px 0 0; font-size:30px; font-weight:600; color:var(--teal); text-align:center; }
+
+.right { left:1426px; top:96px; width:426px; height:900px; gap:20px; }
+.ribbon { width:100%; height:70px; display:grid; place-items:center; color:#fff; background:var(--teal); font-weight:800; font-size:36px; letter-spacing:.06em; clip-path:polygon(0 0,100% 0,calc(100% - 22px) 50%,100% 100%,0 100%,22px 50%); }
+.box { width:100%; border:3px dashed #7FC1C6; border-radius:18px; background:#fff; padding:22px; display:flex; align-items:center; justify-content:center; text-align:center; }
+.box.lecture { height:380px; }
+.box.speaker { height:200px; }
+.fit { width:100%; max-height:100%; overflow:hidden; font-weight:800; line-height:1.18; overflow-wrap:anywhere; hyphens:auto; }
+.lecture .fit { color:var(--gold); }
+.speaker .fit { color:var(--teal); font-weight:700; }
+.podium { width:150px; height:auto; margin-top:auto; }
