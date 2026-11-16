@@ -24,6 +24,6 @@ body { font-family:'Albert Sans','IBM Plex Sans Arabic','Segoe UI',Tahoma,system
 .box.lecture { height:380px; }
 .box.speaker { height:200px; }
 .fit { width:100%; max-height:100%; overflow:hidden; font-weight:800; line-height:1.18; overflow-wrap:anywhere; hyphens:auto; }
-.lecture .fit { color:var(--gold); }
-.speaker .fit { color:var(--teal); font-weight:700; }
+.fit { width:fit-content; max-width:100%; margin:0 auto; padding:.06em 0; background:linear-gradient(90deg,#0B7A84 0%,#5F8E66 50%,#A8801F 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+.speaker .fit { font-weight:700; }
 .podium { width:150px; height:auto; margin-top:auto; }
